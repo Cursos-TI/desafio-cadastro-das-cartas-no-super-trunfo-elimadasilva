@@ -3,7 +3,7 @@ int main(){
     //Declaração de variáveis
     int carta1, carta2, populacaoCidade1, populacaoCidade2, numeroPontosTuristicosCidade1, numeroPontosTuristicosCidade2;
     char estadoCarta1[4], estadoCarta2[4], codigocarta1[10], codigocarta2[10], nomecidade1[15], nomecidade2[15] ;
-    float  areaCidade1, areaCidade2, pibCidade1, pibCidade2;
+    float  areaCidade1, areaCidade2, pibCidade1, pibCidade2, densidadePopulacionalCidade1, densidadePopulacionalCidade2, PIBperCapita1, PIBperCapita2;
 
     //Entrada de Dados do usuário : primeira carta
     printf("olá bem vido ao jogo Super Trunfo! \n" );
@@ -39,6 +39,14 @@ int main(){
     scanf("%f", &pibCidade2);
     printf("Digite a quantidade de pontos turísticos na cidade:");
     scanf("%d", &numeroPontosTuristicosCidade2);
+
+    //Calculo densidade Populacional: 
+    densidadePopulacionalCidade1 = (float) populacaoCidade1/areaCidade1;
+    densidadePopulacionalCidade2 = (float) populacaoCidade2/areaCidade2;
+
+    //Calculo PIB per Capita: 
+    PIBperCapita1 = (float) pibCidade1/populacaoCidade1;
+    PIBperCapita2 = (float) pibCidade2/populacaoCidade2;
     
     
     //Saída de dados primeira e segunda carta
@@ -52,6 +60,8 @@ int main(){
     printf("Área: %.2f km²\n", areaCidade1);
     printf("PIB: %.2f bilhões de reais\n", pibCidade1);
     printf("Número de Pontos Turísticos: %d \n\n", numeroPontosTuristicosCidade1);
+    printf("Densidade populacional da Cidade %s é: %.2f\n", nomecidade1, densidadePopulacionalCidade1);
+    printf("PIB per Capita da Cidade %s é: %.2f\n", nomecidade1, PIBperCapita1);
 
     printf("Carta 2: \n");
     printf("Estado: %s\n", estadoCarta2);
@@ -61,6 +71,8 @@ int main(){
     printf("Área: %.2f km²\n", areaCidade2);
     printf("PIB: %.2f bilhões de reais\n", pibCidade2);
     printf("Número de Pontos Turísticos: %d \n\n", numeroPontosTuristicosCidade2);
+    printf("Densidade populacional da Cidade %s é:  %.2f\n", nomecidade2, densidadePopulacionalCidade2);
+    printf("PIB per Capita da Cidade %s é: %.2f\n", nomecidade2, PIBperCapita2);
 
      return 0;
   
